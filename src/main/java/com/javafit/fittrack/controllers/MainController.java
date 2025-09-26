@@ -25,30 +25,30 @@ public class MainController {
 
     public void setCurrentUser(User user) {
         this.currentUser = user;
-        // USE THE LABEL: Set a welcome message for the logged-in user.
         if (currentUser != null && usernameLabel != null) {
             usernameLabel.setText("Welcome, " + currentUser.getUsername() + "!");
         }
-        
         System.out.println("MainController initialized for user: " + currentUser.getUsername());
-        // Load home page by default
         loadView("home");
     }
 
     @FXML
-    private void handleNavHome(ActionEvent event) {
+    private void handleNavHome() {
         loadView("home");
     }
+
     @FXML
-    private void handleNavHistory(ActionEvent event) {
+    private void handleNavHistory() {
         loadView("history");
     }
+
     @FXML
-    private void handleNavProfile(ActionEvent event) {
+    private void handleNavProfile() {
         loadView("profile");
     }
+
     @FXML
-    private void handleLogSession(ActionEvent event) {
+    private void handleLogSession() {
         loadView("log_session");
     }
 
@@ -61,28 +61,24 @@ public class MainController {
             stage.setTitle("FitTrack - Login");
             stage.setResizable(false);
         } catch (IOException e) {
+            // It's better to log this error to a file in a real application
             e.printStackTrace();
         }
     }
-    
+
     private void loadView(String viewName) {
         try {
-            // Load the FXML file for the selected view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafit/fittrack/fxml/" + viewName + ".fxml"));
             Node view = loader.load();
 
-            // If the loaded controller needs the user object, you can pass it here
-            // Example:
-            // if (loader.getController() instanceof ProfileController) {
-            //     ((ProfileController) loader.getController()).setCurrentUser(currentUser);
-            // }
+            if (loader.getController() instanceof HomeController) {
+                ((HomeController) loader.getController()).initialize(currentUser);
+            }
 
             mainPane.setCenter(view);
         } catch (IOException e) {
             e.printStackTrace();
-            // Handle error: show a message to the user
-            mainPane.setCenter(new Label("Error: Could not load view."));
+            mainPane.setCenter(new Label("Error: Could not load " + viewName + " view."));
         }
     }
 }
-
