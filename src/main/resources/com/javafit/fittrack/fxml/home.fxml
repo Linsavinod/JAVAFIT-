@@ -4,6 +4,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox styleClass="page" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="welcomeLabel" styleClass="page-header" />
    <Label styleClass="page-header" text="Good Morning, javafit!" />
    <Label text="Ready to crush your goals today?" />
     <!-- Content for motivation and article would go here -->
