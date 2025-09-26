@@ -1,0 +1,79 @@
+/* General Styling */
+.root {
+    -fx-background-color: #1a202c; /* gray-900 */
+    -fx-font-family: 'Inter', sans-serif;
+}
+
+.label {
+    -fx-text-fill: #e2e8f0; /* gray-200 */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    -fx-background-color: #2d3748; /* gray-800 */
+    -fx-padding: 20px;
+    -fx-pref-width: 250px;
+}
+
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #a0aec0; /* gray-400 */
+    -fx-font-size: 16px;
+    -fx-alignment: center-left;
+    -fx-pref-width: 210px;
+    -fx-padding: 10px;
+    -fx-background-radius: 8px;
+}
+
+.nav-button:hover {
+    -fx-background-color: #4a5568; /* gray-600 */
+    -fx-text-fill: white;
+}
+
+/* Primary Button Styling */
+.primary-button {
+    -fx-background-color: #3182ce; /* blue-600 */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2b6cb0; /* blue-700 */
+}
+
+/* Page Content Styling */
+.page {
+    -fx-padding: 40px;
+}
+
+.page-header {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Form Styling */
+.text-field, .password-field {
+    -fx-background-color: #2d3748; /* gray-800 */
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #718096; /* gray-500 */
+    -fx-border-color: #4a5568; /* gray-600 */
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+}
+
+.error-label {
+    -fx-text-fill: #f56565; /* red-500 */
+}
